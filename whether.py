@@ -38,5 +38,30 @@ Frame_image=PhotoImage(file="bottom.png")
 frame_myimage=Label(image=Frame_image)
 frame_myimage.pack(padx=5,pady=5,side=BOTTOM)
 
+#label
+Label1=Label(root,text="WIND",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
+Label1.place(x=120,y=400)
+Label1=Label(root,text="HUMADITY",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
+Label1.place(x=250,y=400)
+Label1=Label(root,text="DESCRIPTION",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
+Label1.place(x=430,y=400)
+Label1=Label(root,text="PRESSURE",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
+Label1.place(x=650,y=400)
+
+t=Label(font=("arial",70,"bold"),fg="#170323")
+t.place(x=400,y=150)
+c=Label(font=("arial",15,'bold'))
+c.place(x=400,y=250)
+
+w=Label(text=".....",font=("arial",20,"bold"),bg="#edf5fa")
+w.place(x=120,y=430)
+h=Label(text=".....",font=("arial",20,"bold"),bg="#edf5fa")
+h.place(x=250,y=430)
+d=Label(text=".....",font=("arial",20,"bold"),bg="#edf5fa")
+d.place(x=430,y=430)
+p=Label(text=".....",font=("arial",20,"bold"),bg="#edf5fa")
+p.place(x=650,y=430)
+        
+
 root.mainloop()
 
