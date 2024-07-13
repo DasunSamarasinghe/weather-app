@@ -2,7 +2,7 @@ from tkinter import *
 import tkinter as tk
 from geopy.geocoders import Nominatim
 from tkinter import ttk ,messagebox
-from timezonefinder import timezonefinder
+from timezonefinder import TimezoneFinder
 from datetime import datetime
 import requests
 import pytz
@@ -17,12 +17,12 @@ def getweather():
 
     geolocator=Nominatim(user_agent="geopiExercies")
     location=geolocator.geocode(city)
-    obj=timezonefinder()
+    obj=TimezoneFinder()
     result=obj.timezone_at(lng=location.longitude,lat=location.latitude)
-    print(result)
+    
     home=pytz.timezone(result)
     local_time=datetime.now(home)
-    Crrent_time=local_time.strftime("%I:%M:%p")
+    Crrent_time=local_time.strftime("%I:%M %p")
     clock.config(text=Crrent_time)
     name.config(text="CURRENT WEATHER")
 
@@ -58,12 +58,12 @@ clock.place(x=30,y=130)
 #label
 Label1=Label(root,text="WIND",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
 Label1.place(x=120,y=400)
-Label1=Label(root,text="HUMADITY",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
-Label1.place(x=250,y=400)
-Label1=Label(root,text="DESCRIPTION",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
-Label1.place(x=430,y=400)
-Label1=Label(root,text="PRESSURE",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
-Label1.place(x=650,y=400)
+Label2=Label(root,text="HUMADITY",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
+Label2.place(x=250,y=400)
+Label3=Label(root,text="DESCRIPTION",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
+Label3.place(x=430,y=400)
+Label4=Label(root,text="PRESSURE",font=("Helvetica",15,'bold'),fg="white",bg="#91c0b2")
+Label4.place(x=650,y=400)
 
 t=Label(font=("arial",70,"bold"),fg="#170323")
 t.place(x=400,y=150)
